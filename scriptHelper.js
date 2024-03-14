@@ -5,8 +5,7 @@ require('cross-fetch/polyfill');
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
     // Here is the HTML formatting for our mission target div.
     let div = document.getElementById("missionTarget");
-    div.innerHTML = 
-     `   
+    div.innerHTML =   ` 
                  <h2>Mission Destination</h2>
                  <ol>
                      <li>Name: ${name}</li>
@@ -16,8 +15,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                      <li>Number of Moons: ${moons}</li>
                  </ol>
                  <img src="${imageUrl}">
-    `
- }
+    `; }
  
  function validateInput(testInput) {
     if(testInput === "") {
@@ -30,6 +28,7 @@ return "Empty"
  }
  
  function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+    alert("All fields")
     let launchStatus = document.getElementById("launchStatus");
     let faultyItems = document.getElementById("faultyItems")
 
@@ -42,11 +41,11 @@ return "Empty"
         
         document.getElementById("pilotStatus").textContent = `Pilot ${pilot} is ready for launch`;
         document.getElementById("copilotStatus").textContent = `Co-pilot ${copilot} is ready for launch`;
-
+        list.style.visibility = "visible";
         
         if (fuelLevel < 10000 || cargoLevel > 10000) {
             
-            list.style.visibility = "visible";
+        
             launchStatus.textContent = "Shuttle Not Ready for Launch";
             launchStatus.style.color = "red";
 

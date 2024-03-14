@@ -1,6 +1,6 @@
 // Write your JavaScript code here!
 
-const { addDestinationInfo } = require("./scriptHelper");
+// const { addDestinationInfo } = require("./scriptHelper");
 
 window.addEventListener("load", function() {
 
@@ -22,13 +22,13 @@ window.addEventListener("load", function() {
     });
     
         let list = this.document.getElementById("faultyItems")
-        let form = document.querySelector("launchForm");
+        let form = document.querySelector("form");
         
     //add event listener for button
 
 
     form.addEventListener("submit", function(event) {
-        event.preventDefault()
+        event.preventDefault();
 
         let pilotInput = document.querySelector("input[name=pilotName]");
         let pilot = pilotInput.value;
@@ -39,7 +39,7 @@ window.addEventListener("load", function() {
         let cargoInput = document.querySelector("input[name=cargoMass]");
         let cargoLevel = Number(cargoInput.value)
       
-        function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel)
+         formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel)
 
     //    let pilotStatus = this.document.getElementById("pilotStatus")
         // faultyItems = document.getElementById("faultyItems")
