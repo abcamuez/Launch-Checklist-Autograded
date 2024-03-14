@@ -4,7 +4,9 @@ require('cross-fetch/polyfill');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
     // Here is the HTML formatting for our mission target div.
-    return `
+    let div = document.getElementById("missionTarget");
+    div.innerHTML = 
+     `   
                  <h2>Mission Destination</h2>
                  <ol>
                      <li>Name: ${name}</li>
@@ -85,9 +87,15 @@ return "Empty"
      let planetsReturned;
  
      planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then( function(response) {
- console.log(response);
+        if (response.status >= 400) {
+            throw new Error("Bad response");
+        } else {
+            return response.json();
+        }
+    });
+    
 
-         });
+         ;
 
  
      return planetsReturned;
